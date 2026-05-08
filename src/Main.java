@@ -2,24 +2,29 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        //Arithmetic
+        //Shopping cart program
+        Scanner scanner = new Scanner(System.in);
 
-        int x = 10;
-        int y = 2;
+        String item;
+        double price;
+        int quantity;
+        char currency = '$';
+        double total;
 
-        x += y; //x = x + y
-        x -= y; //x = x - y
-        x *= y; //x = x * y
-        x /= y;
-        x %= y;
+        System.out.print("What item do you like to buy?: ");
+        item = scanner.nextLine();
 
-        x++;
-        x--;
-        System.out.println(x);
+        System.out.print("What is the price for each?: ");
+        price = scanner.nextDouble();
 
-        //Order of operations [parentasis-exponents-multiplication-division-addition-S]
+        System.out.print("How many would you like?: ");
+        quantity = scanner.nextInt();
 
-        double result = 3 + 4 * (7 - 5) / 2.0;
-        System.out.println(result);
+        total = price * quantity;
+
+        System.out.println("\nYou have bought " + quantity + " " + item +"/s");
+        System.out.println("Your total is " + currency + total);
+
+        scanner.close();
     }
 }
